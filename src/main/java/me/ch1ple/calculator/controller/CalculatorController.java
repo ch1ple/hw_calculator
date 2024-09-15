@@ -32,9 +32,6 @@ public class CalculatorController {
     @GetMapping("/minus")
     public String getSubtraction(@RequestParam(value = "num1", required = false) Integer num1,
                                  @RequestParam(value = "num2", required = false) Integer num2) {
-        if (num1 == null || num2 == null){
-            return "Один из параметров отсутствует";
-        }
         int result = calculatorService.getSubtraction(num1, num2);
         return num1 + " - " + num2 + " = " + result;
     }
@@ -42,9 +39,6 @@ public class CalculatorController {
     @GetMapping("/multiply")
     public String getMultiply(@RequestParam(value = "num1", required = false) Integer num1,
                              @RequestParam(value = "num2", required = false) Integer num2) {
-        if (num1 == null || num2 == null){
-            return "Один из параметров отсутствует";
-        }
         int result = calculatorService.getMultiply(num1, num2);
         return num1 + " * " + num2 + " = " + result;
     }
